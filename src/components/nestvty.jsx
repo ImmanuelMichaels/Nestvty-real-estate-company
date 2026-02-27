@@ -10,7 +10,7 @@ const PROPERTIES = [
     baths: 3,
     sqft: 2100,
     tag: "For Rent",
-    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80",
+    img: "",
   },
   {
     id: 2,
@@ -228,6 +228,7 @@ export default function Nestvty() {
           background: var(--dark);
           color: #fff;
           border: none;
+          border-radius: 4px;
           padding: 13px 28px;
           font-family: 'DM Sans', sans-serif;
           font-size: 13px;
@@ -241,6 +242,7 @@ export default function Nestvty() {
           background: transparent;
           color: var(--dark);
           border: 1px solid var(--dark);
+          border-radius: 4px;
           padding: 12px 28px;
           font-family: 'DM Sans', sans-serif;
           font-size: 13px;
@@ -317,6 +319,11 @@ export default function Nestvty() {
           border-left: 3px solid var(--gold);
           transition: all 0.4s;
         }
+        .stat-group {
+          width: auto;
+          display: flex; flex-direction: row; align-items: center; text-align: left;
+          gap: 10px;
+        }
         .stat-num {
           font-family: 'Cormorant Garamond', serif;
           font-size: 52px;
@@ -331,9 +338,11 @@ export default function Nestvty() {
           letter-spacing: 0.12em;
           text-transform: uppercase;
           margin-top: 4px;
+          text-align: left;
+          width: auto;
         }
         .spin-badge {
-          width: 90px; height: 90px;
+          width: 100px; height: 100px;
           border-radius: 50%;
           background: var(--dark);
           display: flex; align-items: center; justify-content: center;
@@ -498,9 +507,6 @@ export default function Nestvty() {
       {/* HERO */}
       <section id="home" style={{ paddingTop: 72, background: "var(--cream)" }}>
         <div style={{ textAlign: "center", padding: "80px 24px 48px" }}>
-          <p className="dm" style={{ fontSize: 12, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--gold)", marginBottom: 20 }}>
-            Real Estate Excellence
-          </p>
           <h1 style={{ fontSize: "clamp(40px, 7vw, 88px)", fontWeight: 600, lineHeight: 1.05, letterSpacing: "-0.01em", maxWidth: 820, margin: "0 auto 24px" }}>
             Your Journey to the<br />
             <em style={{ fontStyle: "italic", fontWeight: 300 }}>Perfect Home</em> Starts Here
@@ -515,16 +521,8 @@ export default function Nestvty() {
         </div>
 
         {/* Hero Image */}
-        <div style={{ position: "relative", maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
-          <div style={{ overflow: "hidden", position: "relative" }}>
-            <img
-              src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=85"
-              alt="Modern Architecture"
-              className="hero-img"
-              style={{ width: "100%", height: "clamp(300px, 45vw, 500px)", objectFit: "cover", display: "block" }}
-            />
-            <div className="spin-badge" onClick={() => scrollTo("contact")}>
-              <svg width="90" height="90" viewBox="0 0 90 90">
+            <div className="spin-badge" onClick={() => scrollTo("contact")} style={{ zIndex: 100 }}>
+              <svg width="100" height="100" viewBox="0 0 90 90">
                 <defs>
                   <path id="circle" d="M 45,45 m -32,0 a 32,32 0 1,1 64,0 a 32,32 0 1,1 -64,0" />
                 </defs>
@@ -534,17 +532,27 @@ export default function Nestvty() {
               </svg>
               <span className="spin-inner">↓</span>
             </div>
+            
+        <div style={{ position: "relative", margin: "0 auto", padding: "0" }}>
+          <div style={{ overflow: "hidden", position: "relative" }}>
+            <img
+              src="/public/hero.jpg"
+              alt="Modern Architecture"
+              className="hero-img"
+              style={{ width: "100%", height: "clamp(300px, 45vw, 500px)", objectFit: "cover", display: "block" }}
+            />
+
           </div>
         </div>
 
         {/* Stats */}
-        <div style={{ background: "var(--dark)", padding: "40px 48px", display: "flex", justifyContent: "center", gap: "clamp(40px, 8vw, 120px)", flexWrap: "wrap" }}>
+        <div style={{ background: "var(--dark)", padding: "40px 20px", display: "flex", justifyContent: "center", gap: "clamp(40px, 8vw, 120px)", flexWrap: "wrap" }}>
           {[
             { num: "100%", label: "Satisfaction\nClients" },
             { num: "250", label: "Employees On\nWorldwide" },
             { num: "3469", label: "Projects Completed\nOn 40 Countries" },
           ].map(({ num, label }) => (
-            <div key={num} style={{ textAlign: "center" }}>
+            <div className="stat-group" key={num} style={{ textAlign: "center" }}>
               <div className="stat-num">{num}</div>
               <div className="stat-label" style={{ whiteSpace: "pre-line", textAlign: "center" }}>{label}</div>
             </div>
@@ -583,7 +591,7 @@ export default function Nestvty() {
             </p>
             <div style={{ overflow: "hidden", height: 420 }}>
               <img
-                src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=600&q=80"
+                src="/image-1.jpg"
                 alt="Modern Property"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
@@ -595,18 +603,6 @@ export default function Nestvty() {
       {/* ABOUT */}
       <section id="aboutus" style={{ padding: "100px 24px", background: "var(--sand)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }} className="grid-2">
-          <RevealSection>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, height: 460 }}>
-              <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=500&q=80" alt="Architecture" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=300&q=80" alt="Interior" style={{ width: "100%", flex: 1, objectFit: "cover" }} />
-                <div style={{ background: "var(--dark)", flex: 0.6, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 13, color: "var(--gold)", letterSpacing: "0.2em", textTransform: "uppercase", textAlign: "center" }}>Since 2008</span>
-                </div>
-              </div>
-            </div>
-          </RevealSection>
-
           <RevealSection delay={200}>
             <p className="dm" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gold)", marginBottom: 16 }}>About Us</p>
             <h2 style={{ fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 500, lineHeight: 1.1, marginBottom: 28 }}>Who We Are</h2>
@@ -624,6 +620,18 @@ export default function Nestvty() {
               ))}
             </div>
             <button className="btn-primary" onClick={() => scrollTo("contact")}>Learn More</button>
+          </RevealSection>
+
+          <RevealSection>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, height: 460 }}>
+              <img src="/image-2.jpg" alt="Architecture" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=300&q=80" alt="Interior" style={{ width: "100%", flex: 1, objectFit: "cover" }} />
+                <div style={{ background: "var(--dark)", flex: 0.6, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 13, color: "var(--gold)", letterSpacing: "0.2em", textTransform: "uppercase", textAlign: "center" }}>Since 2008</span>
+                </div>
+              </div>
+            </div>
           </RevealSection>
         </div>
       </section>
