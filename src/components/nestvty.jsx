@@ -601,7 +601,7 @@ export default function Nestvty() {
       </section>
 
       {/* ABOUT */}
-      <section id="aboutus" style={{ padding: "100px 24px", background: "var(--sand)" }}>
+      <section id="aboutus" style={{ padding: "100px 24px", background: "white" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }} className="grid-2">
           <RevealSection delay={200}>
             <p className="dm" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gold)", marginBottom: 16 }}>About Us</p>
@@ -625,12 +625,7 @@ export default function Nestvty() {
           <RevealSection>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, height: 460 }}>
               <img src="/image-2.jpg" alt="Architecture" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=300&q=80" alt="Interior" style={{ width: "100%", flex: 1, objectFit: "cover" }} />
-                <div style={{ background: "var(--dark)", flex: 0.6, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 13, color: "var(--gold)", letterSpacing: "0.2em", textTransform: "uppercase", textAlign: "center" }}>Since 2008</span>
-                </div>
-              </div>
+             
             </div>
           </RevealSection>
         </div>
