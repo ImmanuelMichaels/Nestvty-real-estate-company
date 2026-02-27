@@ -554,7 +554,7 @@ export default function Nestvty() {
           ].map(({ num, label }) => (
             <div className="stat-group" key={num} style={{ textAlign: "center" }}>
               <div className="stat-num">{num}</div>
-              <div className="stat-label" style={{ whiteSpace: "pre-line", textAlign: "center" }}>{label}</div>
+              <div className="stat-label" style={{ whiteSpace: "pre-line", textAlign: "left" }}>{label}</div>
             </div>
           ))}
         </div>
@@ -832,7 +832,7 @@ export default function Nestvty() {
             ))}
           </div>
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 28, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-            <p className="dm" style={{ fontSize: 12 }}>© 2025 Nestvty. All rights reserved.</p>
+            <p className="dm" style={{ fontSize: 12 }}>© 2027 Nestvty. All rights reserved.</p>
             <p className="dm" style={{ fontSize: 12 }}>Crafted with care for your perfect home.</p>
           </div>
         </div>
